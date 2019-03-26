@@ -1,10 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
+import update from 'immutability-helper';
+import { auto, autoArray } from './helpers/immutability-helper';
+import { history, store } from './store';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+update.extend('$auto', auto);
+update.extend('$autoArray', autoArray);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
