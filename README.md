@@ -23,11 +23,11 @@ This repo aims to be a mostly apples-to-apples comparison of [VueJS](https://vue
 [Redux](https://redux.js.org/)
 
 #### Running the Vue version:
-cd /vue-react-comparison/whats-for-dinner-vue
-npm i
+cd /vue-react-comparison/whats-for-dinner-vue  
+npm i  
 npm run serve
 
 #### Running the React version:
-cd /vue-react-comparison/whats-for-dinner-react
-npm i
+cd /vue-react-comparison/whats-for-dinner-react  
+npm i  
 npm run start
